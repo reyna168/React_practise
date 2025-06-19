@@ -19,3 +19,8 @@ https://realnewbie.com/coding/css/css-pseudo-elements/
 React
 https://www.thisweb.dev/post/what-is-react#%E5%BB%BA%E7%BD%AEreact%E7%92%B0%E5%A2%83
 
+javascript 解答
+https://yuhsien.notion.site/Answer-e0088090d8594e67be8ff4b778a41c57
+
+React 教學
+https://zh-hant.react.dev/learn/importing-and-exporting-components
