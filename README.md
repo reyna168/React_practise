@@ -24,3 +24,6 @@ https://yuhsien.notion.site/Answer-e0088090d8594e67be8ff4b778a41c57
 
 React 教學
 https://zh-hant.react.dev/learn/importing-and-exporting-components
+
+javascript 題目
+https://yuhsien.notion.site/179caa9730284da48b0a6df66886a447
