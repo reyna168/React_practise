@@ -27,3 +27,6 @@ https://zh-hant.react.dev/learn/importing-and-exporting-components
 
 javascript 題目
 https://yuhsien.notion.site/179caa9730284da48b0a6df66886a447
+
+javascript 筆記
+https://notes.boshkuo.com/docs/Javascript/js-arrow-function
