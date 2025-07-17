@@ -35,3 +35,7 @@ https://yuhsien.notion.site/179caa9730284da48b0a6df66886a447
 javascript 筆記
 
 https://notes.boshkuo.com/docs/Javascript/js-arrow-function
+
+
+node server.js mysql 後端新增修改刪除查詢
+react  app.js  頁面修改
