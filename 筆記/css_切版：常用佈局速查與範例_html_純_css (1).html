@@ -1,0 +1,81 @@
+```html
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tailwind 切版：常用佈局速查與範例</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-gray-200 min-h-screen">
+  <div class="max-w-5xl mx-auto px-4 py-8 space-y-10">
+    <h1 class="text-3xl font-bold">Tailwind 切版：常用佈局速查與範例</h1>
+    <p class="text-slate-400">這份檔案示範 6 種常用的切版模式。直接複製下方 HTML 結構與 class，就能快速組裝頁面。</p>
+
+    <!-- 1) 三欄 -->
+    <section class="bg-slate-800/60 p-4 rounded-2xl space-y-3">
+      <h2 class="text-xl font-semibold">1) 三欄：Header + Sidebar + Content <span class="text-xs bg-slate-700 px-2 py-0.5 rounded-full">Grid</span></h2>
+      <div class="grid grid-rows-[auto_1fr] md:grid-cols-[240px_1fr] gap-3 min-h-[280px]">
+        <header class="bg-slate-700 rounded-xl p-3 col-span-full">Header</header>
+        <aside class="bg-slate-700 rounded-xl p-3">Sidebar</aside>
+        <main class="bg-slate-700 rounded-xl p-3">Content</main>
+      </div>
+    </section>
+
+    <!-- 2) Holy Grail -->
+    <section class="bg-slate-800/60 p-4 rounded-2xl space-y-3">
+      <h2 class="text-xl font-semibold">2) Holy Grail 佈局</h2>
+      <div class="grid grid-rows-[auto_1fr_auto] gap-3 min-h-[300px]">
+        <header class="bg-slate-700 rounded-xl p-3">Header</header>
+        <div class="grid md:grid-cols-[220px_1fr_220px] gap-3">
+          <aside class="bg-slate-700 rounded-xl p-3">Left</aside>
+          <main class="bg-slate-700 rounded-xl p-3">Center</main>
+          <aside class="bg-slate-700 rounded-xl p-3">Right</aside>
+        </div>
+        <footer class="bg-slate-700 rounded-xl p-3">Footer</footer>
+      </div>
+    </section>
+
+    <!-- 3) RWD Cards -->
+    <section class="bg-slate-800/60 p-4 rounded-2xl space-y-3">
+      <h2 class="text-xl font-semibold">3) RWD 卡片瀑布流</h2>
+      <div class="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-3">
+        <div class="bg-slate-700 rounded-xl p-3">Card 1</div>
+        <div class="bg-slate-700 rounded-xl p-3">Card 2</div>
+        <div class="bg-slate-700 rounded-xl p-3">Card 3</div>
+        <div class="bg-slate-700 rounded-xl p-3">Card 4</div>
+        <div class="bg-slate-700 rounded-xl p-3">Card 5</div>
+      </div>
+    </section>
+
+    <!-- 4) 置中 -->
+    <section class="bg-slate-800/60 p-4 rounded-2xl space-y-3">
+      <h2 class="text-xl font-semibold">4) 置中技巧</h2>
+      <div class="flex gap-3">
+        <div class="flex items-center justify-center h-40 flex-1 bg-slate-700 rounded-xl">Flex 置中</div>
+        <div class="grid place-items-center h-40 flex-1 bg-slate-700 rounded-xl">Grid 置中</div>
+      </div>
+    </section>
+
+    <!-- 5) Sticky Footer -->
+    <section class="bg-slate-800/60 p-4 rounded-2xl space-y-3">
+      <h2 class="text-xl font-semibold">5) Sticky Footer</h2>
+      <div class="min-h-[200px] flex flex-col">
+        <main class="flex-1 bg-slate-700 rounded-xl p-3">內容區（高度不足時，Footer 仍貼底）</main>
+        <footer class="bg-slate-700 rounded-xl p-3 mt-3">Footer</footer>
+      </div>
+    </section>
+
+    <!-- 6) 等高欄位 -->
+    <section class="bg-slate-800/60 p-4 rounded-2xl space-y-3">
+      <h2 class="text-xl font-semibold">6) 等高欄位</h2>
+      <div class="flex gap-3 flex-wrap md:flex-nowrap">
+        <div class="flex-1 bg-slate-700 rounded-xl p-3">Column A</div>
+        <div class="flex-1 bg-slate-700 rounded-xl p-3">Column B</div>
+        <div class="flex-1 bg-slate-700 rounded-xl p-3">Column C</div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
+```

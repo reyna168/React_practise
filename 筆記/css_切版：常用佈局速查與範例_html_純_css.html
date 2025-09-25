@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS 切版：常用佈局速查與範例</title>
+  <style>
+    :root{
+      --bg:#0f172a; /* slate-900 */
+      --panel:#111827ee; /* gray-900 */
+      --card:#1f2937; /* gray-800 */
+      --muted:#94a3b8; /* slate-400 */
+      --text:#e5e7eb; /* gray-200 */
+      --accent:#22d3ee; /* cyan-400 */
+      --radius:14px;
+    }
+    html,body{height:100%;}
+    body{
+      margin:0; font:16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Noto Sans TC, Arial, sans-serif;
+      color:var(--text); background:radial-gradient(1200px 600px at 10% -10%, #22d3ee20, transparent 60%), var(--bg);
+    }
+    .wrap{max-width:1100px; margin:40px auto; padding:0 16px;}
+    h1{font-size:28px; letter-spacing:.3px;}
+    h2{font-size:20px; margin:24px 0 10px;}
+    p{color:var(--muted);}
+
+    /* 展示卡片 */
+    .demo{background:var(--panel); border:1px solid #33415555; border-radius:var(--radius); padding:16px; box-shadow:0 10px 30px #00000030;}
+    .code{background:#0b1220; color:#e3eaff; border:1px solid #1f2a44; border-radius:10px; padding:12px; overflow:auto; font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:13px;}
+    .grid{display:grid; gap:16px;}
+
+    /* ===== 1) 三欄：Header + Sidebar + Content ===== */
+    .layout-3col{
+      display:grid; grid-template-rows:auto 1fr; grid-template-columns:240px 1fr; gap:12px; min-height:360px;
+      background:linear-gradient(180deg, #0b1220, #0b1220); border-radius:12px; padding:12px; border:1px solid #1f2a44;
+    }
+    .header{grid-column:1/-1; background:var(--card); border-radius:10px; padding:14px;}
+    .sidebar{background:var(--card); border-radius:10px; padding:14px;}
+    .content{background:var(--card); border-radius:10px; padding:14px;}
+    @media (max-width:800px){
+      .layout-3col{grid-template-columns:1fr;}
+      .sidebar{order:2}
+    }
+
+    /* ===== 2) Holy Grail (Header / Footer 固定，高度自適) ===== */
+    .holy-wrap{min-height:420px; display:grid; grid-template-rows:auto 1fr auto; gap:12px;}
+    .holy-header,.holy-footer{background:var(--card); border-radius:10px; padding:14px;}
+    .holy-main{display:grid; grid-template-columns:220px 1fr 220px; gap:12px;}
+    .holy-main > div{background:var(--card); border-radius:10px; padding:14px;}
+    @media (max-width:900px){.holy-main{grid-template-columns:1fr;}}
+
+    /* ===== 3) RWD 卡片瀑布流 (等寬自動換行) ===== */
+    .cards{display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:12px;}
+    .card{background:var(--card); border-radius:12px; padding:14px; min-height:90px;}
+
+    /* ===== 4) 置中技巧 ===== */
+    .center-flex{display:flex; align-items:center; justify-content:center; height:180px; background:var(--card); border-radius:12px;}
+    .center-grid{display:grid; place-items:center; height:180px; background:var(--card); border-radius:12px;}
+
+    /* ===== 5) Sticky Footer：視窗不足時貼底 ===== */
+    .sticky-page{min-height:300px; display:flex; flex-direction:column;}
+    .sticky-main{flex:1; background:var(--card); border-radius:12px; padding:14px;}
+    .sticky-footer{margin-top:12px; background:var(--card); border-radius:12px; padding:14px;}
+
+    /* ===== 6) 等高欄位 (Flexbox) ===== */
+    .equal-cols{display:flex; gap:12px;}
+    .equal-cols > div{flex:1; background:var(--card); border-radius:12px; padding:14px;}
+    @media (max-width:780px){.equal-cols{flex-direction:column;}}
+
+    /* 小徽章 & 標籤 */
+    .tag{display:inline-block; padding:2px 10px; border:1px solid #334155aa; border-radius:999px; color:#cbd5e1; font-size:12px;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>CSS 切版：常用佈局速查與範例</h1>
+    <p>這份檔案示範 6 種最常用的切版模式。直接複製下方 HTML 結構與 class，就能快速組裝頁面。</p>
+
+    <div class="grid" style="margin-top:20px">
+      <!-- 1) 三欄 -->
+      <section class="demo">
+        <h2>1) 三欄：Header + Sidebar + Content <span class="tag">Grid</span></h2>
+        <div class="layout-3col">
+          <header class="header">Header</header>
+          <aside class="sidebar">Sidebar (nav / menu)</aside>
+          <main class="content">Content（文章、表格、列表…）</main>
+        </div>
+        <div class="code" aria-label="code">
+&lt;div class="layout-3col"&gt;
+  &lt;header class="header"&gt;Header&lt;/header&gt;
+  &lt;aside class="sidebar"&gt;Sidebar&lt;/aside&gt;
+  &lt;main class="content"&gt;Content&lt;/main&gt;
+&lt;/div&gt;
+        </div>
+      </section>
+
+      <!-- 2) Holy Grail -->
+      <section class="demo">
+        <h2>2) Holy Grail 佈局 <span class="tag">Header / 內容三欄 / Footer</span></h2>
+        <div class="holy-wrap">
+          <header class="holy-header">Header</header>
+          <div class="holy-main">
+            <aside>Left</aside>
+            <main>Center</main>
+            <aside>Right</aside>
+          </div>
+          <footer class="holy-footer">Footer</footer>
+        </div>
+        <div class="code">
+&lt;div class="holy-wrap"&gt;
+  &lt;header class="holy-header"&gt;Header&lt;/header&gt;
+  &lt;div class="holy-main"&gt;
+    &lt;aside&gt;Left&lt;/aside&gt;
+    &lt;main&gt;Center&lt;/main&gt;
+    &lt;aside&gt;Right&lt;/aside&gt;
+  &lt;/div&gt;
+  &lt;footer class="holy-footer"&gt;Footer&lt;/footer&gt;
+&lt;/div&gt;
+        </div>
+      </section>
+
+      <!-- 3) RWD Cards -->
+      <section class="demo">
+        <h2>3) RWD 卡片瀑布流 <span class="tag">auto-fill + minmax</span></h2>
+        <div class="cards">
+          <div class="card">Card 1</div>
+          <div class="card">Card 2</div>
+          <div class="card">Card 3</div>
+          <div class="card">Card 4</div>
+          <div class="card">Card 5</div>
+        </div>
+        <div class="code">
+&lt;div class="cards"&gt;
+  &lt;div class="card"&gt;...&lt;/div&gt;
+  ...
+&lt;/div&gt;
+        </div>
+      </section>
+
+      <!-- 4) 置中 -->
+      <section class="demo">
+        <h2>4) 置中技巧 <span class="tag">Flex / Grid</span></h2>
+        <div class="equal-cols">
+          <div class="center-flex">Flex 置中</div>
+          <div class="center-grid">Grid 置中</div>
+        </div>
+        <div class="code">
+/* Flex */
+.container{display:flex; align-items:center; justify-content:center;}
+/* Grid */
+.container{display:grid; place-items:center;}
+        </div>
+      </section>
+
+      <!-- 5) Sticky Footer -->
+      <section class="demo">
+        <h2>5) Sticky Footer <span class="tag">Flex</span></h2>
+        <div class="sticky-page">
+          <main class="sticky-main">內容區（高度不夠時，Footer 仍貼底）</main>
+          <footer class="sticky-footer">Footer</footer>
+        </div>
+        <div class="code">
+/* 版型容器 */
+.page{min-height:100dvh; display:flex; flex-direction:column;}
+.main{flex:1}
+        </div>
+      </section>
+
+      <!-- 6) 等高欄位 -->
+      <section class="demo">
+        <h2>6) 等高欄位 <span class="tag">Flex 1:1</span></h2>
+        <div class="equal-cols">
+          <div>Column A（等高）</div>
+          <div>Column B（等高）</div>
+          <div>Column C（等高）</div>
+        </div>
+        <div class="code">
+.container{display:flex; gap:12px}
+.container &gt; div{flex:1}
+@media(max-width:780px){.container{flex-direction:column}}
+        </div>
+      </section>
+    </div>
+
+    <p style="margin-top:24px">小抄：
+      <span class="tag">Grid 三寶：repeat / auto-fit(auto-fill) / minmax</span>
+      <span class="tag">Flex 三寶：gap / align-items / justify-content</span>
+      <span class="tag">RWD：@media + clamp() + fluid spacing</span>
+    </p>
+  </div>
+</body>
+</html>
