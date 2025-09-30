@@ -37,5 +37,17 @@ javascript 筆記
 https://notes.boshkuo.com/docs/Javascript/js-arrow-function
 
 
+W3Schools CSS Tutorial - W3Schools的CSS教程提供了從基礎到高級的CSS知識和示例。
+MDN Web Docs - CSS - MDN Web Docs提供了詳細的CSS參考和教程，涵蓋了各種CSS屬性和樣式的使用方式。
+CodePen - CodePen是一個社區驅動的網頁開發平台，可以用於測試和分享CSS代碼片段和實驗。
+CSS Tricks - CSS Tricks是由瑞安·費佛（Chris Coyier）創建的一個CSS教學和資源網站，提供了大量CSS技巧和實用工具。
+GitHub - GitHub是一個開源代碼存儲和協作平台，設計師可以在上面找到各種CSS庫和項目，並參與貢獻。
+Can I Use - Can I Use是一個用於查詢CSS和其他網頁技術兼容性的網站，可以了解各種瀏覽器的支持情況。
+CSS Guidelines - CSS Guidelines是一份關於CSS代碼風格和最佳實踐的指南，幫助設計師建立一致、易於維護的CSS代碼庫。
+CSS Reference - CSS Reference提供了詳細的CSS屬性和值的參考手冊，以及各種CSS特性的示例和用法。
+
+
+
+
 node server.js mysql 後端新增修改刪除查詢
 react  app.js  頁面修改
