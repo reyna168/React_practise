@@ -1,0 +1,9 @@
+{
+  "rules": [
+    "所有前端程式碼請使用 React.js(最新版本)",
+    "請使用 Function Component 而不是 Class Component",
+    "一律使用 Hooks(useState, useEffect)",
+    "樣式請優先使用 Tailwind CSS",
+    "所有 API 呼叫請用 fetch,不要用 axios"
+  ]
+}
